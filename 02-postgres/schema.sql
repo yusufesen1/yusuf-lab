@@ -6,7 +6,8 @@ CREATE TABLE users (
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  price NUMERIC NOT NULL CHECK (price >= 0)
+  price NUMERIC NOT NULL CHECK (price >= 0),
+  stock INT NOT NULL DEFAULT 0 CHECK (stock >= 0)
 );
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
